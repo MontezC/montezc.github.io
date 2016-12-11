@@ -136,7 +136,7 @@ body{
     text-decoration: none;
 }
 .frontPage i, .footer i{
-    font-size: 1.5em;
+    font-size: 1.3em;
     color: #ffdb74;
 }
 @media screen and (max-width: 480px){
