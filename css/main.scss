@@ -1,0 +1,292 @@
+@import 'reset';
+@import 'variables';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Playfair+Display|Monoton');
+
+html,
+body{
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: map-get($colors, tertiary);
+}
+
+.container{
+    position: fixed;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    
+    &:before{
+        content: '';
+        position: fixed;
+        top: 15px;
+        bottom: 15px;
+        left: 15px;
+        right: 15px;
+        background-color: rgba(238, 238, 238, .2);
+        border: 1px solid map-get($colors, primary);
+    }
+}
+
+.menu{
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    color: map-get($colors, primary);
+    z-index: 1;
+    cursor: pointer;
+    
+    .drop-content{
+        display: none;
+        position: absolute;
+        background: map-get($colors, primary);
+        box-shadow: 1px 1px 5px lightgray;
+        font-family: map-get($fonts, secondary);
+    }
+    
+    .drop-content a{
+        padding: 15px 25px;
+        display: block;
+        text-decoration: none;
+        color: map-get($colors, accent);
+    }
+    
+    .drop-content a:hover{
+        background-color: map-get($colors, tertiary);
+        color: map-get($colors, primary);
+    }
+}
+
+.logo-container{
+    position: fixed;
+    top: 15px;
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    max-width: 350px;
+    width: 100%;
+    max-height: 350px;
+    height: 100%;
+}
+
+.circle{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 100%;
+    background-color: map-get($colors, primary);
+    
+    &:after{
+        content: 'M';
+        display: block;
+        text-align: center;
+        font-family: map-get($fonts, tertiary);
+        font-size: 13em;
+        color: map-get($colors, accent);
+    }
+}
+
+.name{
+    margin-top: -125px;
+    width: 200px;
+    font-family: map-get($fonts, primary);
+    color: map-get($colors, accent);
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.5em;
+}
+
+.title{
+    position: fixed;
+    left: 25px;
+    bottom: 15px;
+    font-family: map-get($fonts, secondary);
+    text-align: center;
+}
+
+.links{
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    
+    a{
+        color: map-get($colors, primary);
+    }
+    
+}
+
+
+/* about.html stylesheet */
+.left{
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    bottom: 15px;
+    width: 49%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: map-get($colors, primary);
+    
+    .top{
+        max-width: 300px;
+        width: 100%;
+        font-family: map-get($fonts, secondary);
+        text-transform: uppercase;
+        font-size: 2em;
+    }
+    
+    .bottom{
+        max-width: 300px;
+        width: 100%;
+        font-family: map-get($fonts, primary);
+    }
+}
+
+.right{
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    bottom: 15px;
+    width: 49%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    .work{
+        margin-left: 5px;
+        width: 150px;
+        height: 150px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: map-get($fonts, secondary);
+        background-color: map-get($colors, primary);
+        text-decoration: none;
+        text-transform: capitalize;
+        color: map-get($colors, accent);
+    }
+}
+
+
+/* Media Queries */
+//phone
+@media (min-width: map-get($bps, ph-min)) and (max-width: map-get($bps, ph-max)){
+    .container{
+        position: static;
+        width: 100%;
+        height: 100%;
+        
+        &:before{
+            position: static;
+            border: none;
+        }
+    }
+    
+    .logo{
+        max-width: 250px;
+        width: 100%;
+        max-height: 250px;
+        height: 100%;
+    }
+    
+    .circle{
+        border-radius: 50%;
+        width: 100%;
+        height: 100%;
+        padding-bottom: 100%;
+        background-color: map-get($colors, primary);
+    
+        &:after{
+            content: 'M';
+            display: block;
+            text-align: center;
+            font-family: map-get($fonts, tertiary);
+            font-size: 9em;
+            color: map-get($colors, accent);
+        }
+    }
+    
+    .name{
+        margin-top: -90px;
+        width: 200px;
+        font-family: map-get($fonts, primary);
+        color: map-get($colors, accent);
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 1.5em;
+    }
+    
+    .title{
+        bottom: 25px;
+    }
+    
+    .left, .right{
+        position: static;
+        width: 100%;
+    }
+    
+    .left{
+        height: 98%;
+    }
+    
+    .right{
+        display: block;
+        width: 100%;
+        
+        .work{
+            margin: 0px;
+            width: 100%;
+        }
+    }
+    
+    html::-webkit-scrollbar{display: none;}
+}
+
+//tablet
+@media (min-width: map-get($bps, ph-max)) and (max-width: map-get($bps, tb-max)){
+    .container{
+        position: static;
+        width: 100%;
+        height: 100%;
+        
+        &:before{
+            position: static;
+            border: none;
+        }
+    }
+    
+    .left, .right{
+        position: static;
+        width: 100%;
+    }
+    
+    .left{
+        height: 90%;
+    }
+    
+    .right{
+        display: block;
+        width: 100%;
+        
+        .work{
+            margin: 0px;
+            width: 100%;
+        }
+    }
+    
+    html::-webkit-scrollbar{display: none;}
+    
+}

@@ -1,0 +1,16 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+body div,
+ul,
+ol{
+    margin: 0;
+    padding: 0;
+}
+
+html{box-sizing: border-box;}
